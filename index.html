@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Product CRUD</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+  <h1>Product Dashboard</h1>
+
+  <div class="forms-container">
+    
+    <form id="add-product-form">
+      <h2>Add Product</h2>
+      
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Ex: Teclado Mecânico" required>
+      
+      <label for="description">Description</label>
+      <input type="text" id="description" name="description" placeholder="Ex: Switch Blue RGB" required>
+
+      <label for="price">Price ($)</label>
+      <input type="number" id="price" name="price" placeholder="Ex: 199.90" required step="0.01">
+      
+      <button type="submit">Add Product</button>
+    </form>
+
+    <form id="update-product-form">
+      <h2>Update Product</h2>
+      
+      <input type="hidden" id="update-id" name="id">
+
+      <label for="update-name">Name</label>
+      <input type="text" id="update-name" name="name" placeholder="Select a product to edit" required>
+
+      <label for="update-description">Description</label>
+      <input type="text" id="update-description" name="description" placeholder="Select a product to edit" required>
+
+      <label for="update-price">Price ($)</label>
+      <input type="number" id="update-price" name="price" placeholder="Select a product to edit" required step="0.01">
+
+      <button type="submit">Update Product</button>
+    </form>
+
+    <form id="search-product-form">
+      <h2>Search by ID</h2>
+      
+      <label for="search-id">Product ID</label>
+      <input type="text" id="search-id" name="searchId" placeholder="Ex: 1 ou a1b2c3" required>
+      
+      <button type="submit">Search Product</button>
+      
+      <div id="search-result"></div>
+    </form>
+
+  </div>
+
+  <div class="list-container">
+    <h2>Registered Products</h2>
+    <ul id="products"></ul>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    window.addEventListener('load', fetchProducts);
+  </script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+/* Configurações Globais e Cores */
+:root {
+  --bg-color: #f4f7f6;
+  --card-bg: #ffffff;
+  --primary: #4a90e2;
+  --primary-hover: #357abd;
+  --danger: #e74c3c;
+  --danger-hover: #c0392b;
+  --text-main: #333333;
+  --text-muted: #666666;
+  --border-color: #dddddd;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  margin: 0;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  color: var(--primary);
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+h2 {
+  color: var(--text-main);
+  font-size: 1.3rem;
+  margin-top: 0;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--bg-color);
+  padding-bottom: 10px;
+}
+
+/* Container que organiza os formulários em grade */
+.forms-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1000px;
+  margin-bottom: 40px;
+}
+
+/* Estilização Padrão dos Formulários */
+form {
+  background: var(--card-bg);
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s;
+}
+
+form:hover {
+  transform: translateY(-2px);
+}
+
+label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--text-muted);
+}
+
+input {
+  padding: 10px 12px;
+  margin-bottom: 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input:focus {
+  border-color: var(--primary);
+}
+
+/* Botões */
+button {
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+form button[type="submit"] {
+  background-color: var(--primary);
+  color: white;
+}
+
+form button[type="submit"]:hover {
+  background-color: var(--primary-hover);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Seção da Lista de Produtos e Resultados */
+.list-container {
+  width: 100%;
+  max-width: 1000px;
+  background: var(--card-bg);
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+ul#products {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul#products li {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid var(--bg-color);
+  gap: 10px;
+}
+
+ul#products li:last-child {
+  border-bottom: none;
+}
+
+/* Espaçamento interno do texto do produto para empurrar os botões para a direita */
+ul#products li .product-info {
+  flex-grow: 1;
+  font-size: 1rem;
+}
+
+ul#products li .product-info .id-tag {
+  font-size: 0.8rem;
+  background: #eee;
+  padding: 2px 6px;
+  border-radius: 3px;
+  color: var(--text-muted);
+  margin-left: 5px;
+}
+
+/* Botões da Lista */
+ul#products li button {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+}
+
+ul#products li button:nth-of-type(1) { /* Botão Delete */
+  background-color: var(--danger);
+  color: white;
+}
+
+ul#products li button:nth-of-type(1):hover {
+  background-color: var(--danger-hover);
+}
+
+ul#products li button:nth-of-type(2) { /* Botão Update */
+  background-color: #f39c12;
+  color: white;
+}
+
+ul#products li button:nth-of-type(2):hover {
+  background-color: #e67e22;
+}
+
+/* Caixa de Resultado da Busca */
+#search-result .search-card {
+  padding: 15px;
+  border: 1px dashed var(--primary);
+  background-color: #ebf5fb;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+
+#search-result .error-msg {
+  color: var(--danger);
+  font-weight: 600;
+  margin-top: 10px;
+}
